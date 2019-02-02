@@ -7,10 +7,10 @@ script:
   - SPURL="https://sparql.crssnky.xyz/spql/imas/query?query=PREFIX%20schema%3A%20%3Chttp%3A%2F%2Fschema.org%2F%3ESELECT%20(sample(%3Fo)%20as%20%3Fdate)%20(sample(%3Fn)%20as%20%3Fname)%20WHERE%20%7B%20%3Fsub%20schema%3AbirthDate%20%3Fo%3B%20schema%3Aname%7Cschema%3AalternateName%20%3Fn%3BFILTER(regex(str(%3Fo)%2C%20%22$TODAY%22%20)).%7Dgroup%20by(%3Fn)order%20by(%3Fname)"
   - IDOLS=`curl -s $SPURL | jq ".results.bindings | map(.name.value)" | jq -r 'join(" ")'`
   - if [ -n "$IDOLS" ]; then
-      echo $IDOLS
-    else
-      echo "NO IDOLS"
-    fi
+  -  echo $IDOLS
+  - else
+  -   echo "NO IDOLS"
+  - fi
 notifications:
   slack:
     secure: "p+UVtQsgSAuUpvD4La6Dqs5DOJD7LJ+8TtmXLKIb4jfnvwgCyhH9+vv2QeNjamUE9XUpOafGrt/2iKZV9d96+4LZafuzAnIMFV570mOxwtpjGycuPLexvg7eMQFo2YpiErVRAvNjL43fEmJj/EPmaKswUtTGwfcFUIJj/sXaKWMJPgUDhfWMJWhrrenYMFWsLzBfY5qzlWuWI9/4Wx+7yCKmZkSikPBJMc4+RoiaSsshyw8G0xZUw20wkeUvfWOTtTH5S51DH/oh7v1tlpVVM9PRDY5LHaGb0b4Buk/hox0g8JE7d/XHH3rVCVOg7KA4h9KYZr1URP3frK2gqcnhwAst8bT8jpHUNXFGlIrbuDzejMKUFeT1BvcB2H4H4nPLjQjhtJAGWd/omY51AJ30vUP1buEaCKR+rF+B3j4JISm0N40n3nOTFAMTT3PsG2IRnA7rwXYj/+2BP4hwenII+X01Dje26kMYXGtbW0w7W7jquStX+lQSYw2uA3qvKvVwX42UdU1oRjy/H3LNTP45TU+CtqWEzQHNIqoemPryM4bCydVCzYgsJSI4wrd9FCuWYC9+2F1MTfijMlRrSMC9oL9yMBGba6uLV7axyVOf0T6BSZD3gRs8XBtPVt7UHtZcGUTFdSY3ICSczHABoxAuOO5e6dUb1f+Um9scgCbrlho="
