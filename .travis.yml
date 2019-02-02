@@ -3,7 +3,7 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -y curl jq
 script:
-  - ./idols.sh
+  - sh ./idols.sh
 notifications:
   slack:
     secure: "p+UVtQsgSAuUpvD4La6Dqs5DOJD7LJ+8TtmXLKIb4jfnvwgCyhH9+vv2QeNjamUE9XUpOafGrt/2iKZV9d96+4LZafuzAnIMFV570mOxwtpjGycuPLexvg7eMQFo2YpiErVRAvNjL43fEmJj/EPmaKswUtTGwfcFUIJj/sXaKWMJPgUDhfWMJWhrrenYMFWsLzBfY5qzlWuWI9/4Wx+7yCKmZkSikPBJMc4+RoiaSsshyw8G0xZUw20wkeUvfWOTtTH5S51DH/oh7v1tlpVVM9PRDY5LHaGb0b4Buk/hox0g8JE7d/XHH3rVCVOg7KA4h9KYZr1URP3frK2gqcnhwAst8bT8jpHUNXFGlIrbuDzejMKUFeT1BvcB2H4H4nPLjQjhtJAGWd/omY51AJ30vUP1buEaCKR+rF+B3j4JISm0N40n3nOTFAMTT3PsG2IRnA7rwXYj/+2BP4hwenII+X01Dje26kMYXGtbW0w7W7jquStX+lQSYw2uA3qvKvVwX42UdU1oRjy/H3LNTP45TU+CtqWEzQHNIqoemPryM4bCydVCzYgsJSI4wrd9FCuWYC9+2F1MTfijMlRrSMC9oL9yMBGba6uLV7axyVOf0T6BSZD3gRs8XBtPVt7UHtZcGUTFdSY3ICSczHABoxAuOO5e6dUb1f+Um9scgCbrlho="
